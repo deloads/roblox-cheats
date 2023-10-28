@@ -1,0 +1,15 @@
+function getNil(name,class)
+    for _,v in pairs(getnilinstances())do
+            if v.ClassName==class and v.Name==name then
+                return v;
+            end 
+        end 
+    end
+
+local args = {
+    [1] = {
+        [1] = getNil("38446-353", "Vector3Value")
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.Harvest:FireServer(unpack(args))
